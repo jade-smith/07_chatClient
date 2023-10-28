@@ -5,6 +5,8 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
 import Footer from './components/footer/Footer';
 import Auth from './components/auth/Auth';
+import Auth from './components/auth/Auth'
+
 
 function App() {
   const [token, setToken] = useState('');
@@ -36,6 +38,7 @@ function App() {
       </Routes>
       </BrowserRouter>
       {token ? 'Token is Updated' : null}
+
     </div>
   );
 }
