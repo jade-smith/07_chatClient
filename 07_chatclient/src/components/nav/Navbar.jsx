@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
+
 
 const Navbar = ({token, clearToken}) =>{
 
   return(
     <nav>
-      <header style={{justifyContent: "left"}}>Brand</header> 
+      <header style={{padding: 20}}>Brand</header> 
       {!token
       ?
       null

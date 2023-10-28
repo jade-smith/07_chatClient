@@ -6,6 +6,10 @@ function Login({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  function Signup(){
+    navigate('/signup');
+  }
+
   //const loginRoute = "http://";
 
   async function loginUser(e) {
@@ -59,6 +63,7 @@ function Login({ setToken }) {
         <button type="submit">
           Login
         </button>
+        <button onClick={Signup}>Create an Account</button>
       </form>
     </div>
   );
