@@ -3,7 +3,8 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
-//import Auth from 
+import Footer from './components/footer/Footer';
+import Auth from './components/auth/Auth';
 
 function App() {
   const [token, setToken] = useState('');
@@ -29,6 +30,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Navbar token={token} clearToken={clearToken} />
+      <Footer />
       <Routes>
         <Route path="/" element={<Auth setToken={updateToken} />} />
       </Routes>
