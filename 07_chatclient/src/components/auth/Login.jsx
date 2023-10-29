@@ -6,12 +6,6 @@ function Login({ setToken }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  function Signup(){
-    navigate('/signup');
-  }
-
-  //const loginRoute = "http://";
-
   async function loginUser(e) {
     e.preventDefault();
   
@@ -26,7 +20,7 @@ function Login({ setToken }) {
           "content-type": "application/json",
         }),
         method: "POST",
-        body: JSON.stringfly({
+        body: JSON.stringify({
           email,
           password
         }),
@@ -59,11 +53,9 @@ function Login({ setToken }) {
           }}
         />
         <br />
-
-        <button type="submit">
+        <button style={{}}type="submit">
           Login
         </button>
-        <button onClick={Signup}>Create an Account</button>
       </form>
     </div>
   );
