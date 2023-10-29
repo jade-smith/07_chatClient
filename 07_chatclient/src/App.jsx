@@ -3,7 +3,11 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
-import Auth from './components/auth/Auth'
+import Footer from './components/footer/Footer';
+import Auth from './components/auth/Auth';
+import Button from './components/auth/Button';
+
+
 
 function App() {
   const [token, setToken] = useState('');
@@ -30,10 +34,12 @@ function App() {
       <BrowserRouter>
       <Navbar token={token} clearToken={clearToken} />
       <Routes>
-        <Route path="/" element={<Auth setToken={updateToken} />} />
+        {/* <Route path="/" element={<Auth setToken={updateToken} />} /> */}
+        <Route path='/' element={<Button />} />
       </Routes>
       </BrowserRouter>
       {token ? 'Token is Updated' : null}
+      <Footer />
 
     </div>
   );
