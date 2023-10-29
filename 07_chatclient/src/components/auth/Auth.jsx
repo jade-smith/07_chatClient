@@ -1,5 +1,6 @@
 import Signup from "./signup/Signup";
 import Login from "./Login";
+import Button from "./Button";
 
 function Auth(props) {
     return (

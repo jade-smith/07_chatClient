@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import Navbar from './components/nav/Navbar';
 import Footer from './components/footer/Footer';
 import Auth from './components/auth/Auth';
-import Auth from './components/auth/Auth'
+import Button from './components/auth/Button';
+
 
 
 function App() {
@@ -32,12 +33,13 @@ function App() {
     <div className="App">
       <BrowserRouter>
       <Navbar token={token} clearToken={clearToken} />
-      <Footer />
       <Routes>
-        <Route path="/" element={<Auth setToken={updateToken} />} />
+        {/* <Route path="/" element={<Auth setToken={updateToken} />} /> */}
+        <Route path='/' element={<Button />} />
       </Routes>
       </BrowserRouter>
       {token ? 'Token is Updated' : null}
+      <Footer />
 
     </div>
   );

@@ -3,7 +3,7 @@ import React from "react";
 const Footer =()=>{
 return(
   <footer>
-    <h3>Upright Project: React Chat</h3>
+    <h6>Upright Project: React Chat</h6>
   </footer>
 );
 };
