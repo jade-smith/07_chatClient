@@ -49,7 +49,7 @@ function Signup(props) {
         console.log(results);
         props.setToken(results.token);
         if(response.status === 200)
-          navigate('/room');
+          navigate('/');
       } catch(error) {
         console.log(error);
       }

@@ -33,7 +33,7 @@ function Login({ setToken }) {
       setToken(results.token);
 
       if(response.status === 200){
-        navigate('/about') //! this will need to change to message page
+        navigate('/room') //! this will need to change to message page
       }
     } 
 
