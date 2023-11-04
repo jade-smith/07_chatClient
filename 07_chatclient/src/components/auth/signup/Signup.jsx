@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DisplayRoom from '../room/displayRooms';
 
 function Signup(props) {
   const navigate = useNavigate();
@@ -39,17 +40,17 @@ function Signup(props) {
           }),
           method: 'POST',
           body: JSON.stringify({
-            mail: email,
-            user: userName,
-            pass: password,
+            email: email,
+            userName: userName,
+            password: password,
           })
         })
   
         let results = await response.json();
         console.log(results);
-        props.setToken(results.token);
+        props.updateToken(results.token);
         if(response.status === 200)
-          navigate('/room');
+          navigate(DisplayRoom);
       } catch(error) {
         console.log(error);
       }
@@ -57,13 +58,5 @@ function Signup(props) {
   }
 }
 
-function DisplayUser(props) {
-  return (
-    <div>
-      <h2>Username: { props.userName }</h2>
-      <h2>Password: { props.password }</h2>
-    </div>
-  )
-}
 
 export default Signup

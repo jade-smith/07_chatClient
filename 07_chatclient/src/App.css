@@ -36,3 +36,23 @@
     transform: rotate(360deg);
   }
 }
+
+.room-container {
+  display: flex;
+}
+
+.room-list {
+  width: auto; /* Adjust the width as needed */
+  padding: 10px;
+}
+
+.room-display {
+  flex: 1;
+  padding: 20px;
+  /* Add additional styling for the room display area */
+}
+
+.list-group-item {
+  list-style-type: none;
+}
+

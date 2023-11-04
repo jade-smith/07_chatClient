@@ -6,6 +6,7 @@ import Navbar from './components/nav/Navbar';
 import Footer from './components/footer/Footer';
 import Auth from './components/auth/Auth';
 import Button from './components/auth/Button';
+import DisplayRoom from './components/auth/room/displayRooms';
 
 
 
@@ -34,8 +35,8 @@ function App() {
       <BrowserRouter>
       <Navbar token={token} clearToken={clearToken} />
       <Routes>
-        {/* <Route path="/" element={<Auth setToken={updateToken} />} /> */}
-        <Route path='/' element={<Button />} />
+        <Route path="/home" element={<DisplayRoom />} />
+        <Route path='/' element={<Button updateToken={updateToken}/>} />
       </Routes>
       </BrowserRouter>
       {token ? 'Token is Updated' : null}

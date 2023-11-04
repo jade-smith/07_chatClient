@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
+import displayRoom from "./room/displayRooms";
 
-function Login({ setToken }) {
+function Login({ updateToken }) {
   const navigate = useNavigate('');
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -28,10 +29,10 @@ function Login({ setToken }) {
   
       const results = await response.json();
       console.log(response.status);
-      setToken(results.token);
+      updateToken(results.token);
 
       if(response.status === 200){
-        navigate('/about') //! this will need to change to message page
+        navigate('/home') //! this will need to go to message page
       }
     } 
 

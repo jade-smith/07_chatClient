@@ -2,7 +2,7 @@ import Login from "./Login";
 import Signup from "./signup/Signup";
 import { useState } from "react";
 
-function Button(){
+function Button({ updateToken }){
   const[login, notLogin] = useState('true');
 
   return(
@@ -19,9 +19,9 @@ function Button(){
     {
       login
       ?
-      <Login />
+      <Login updateToken={updateToken}/>
       :
-      <Signup />
+      <Signup updateToken={updateToken}/>
     }
     </div>
   )

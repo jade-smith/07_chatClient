@@ -10,7 +10,7 @@ const Navbar = ({token, clearToken}) =>{
       ?
       null
       :
-      <Link onClick={clearToken} style={{justifyContent: "right"}} to='/auth'>Logout</Link> 
+      <Link onClick={clearToken} style={{justifyContent: "right"}} to='/'>Logout</Link> 
       }
     </nav>
   )

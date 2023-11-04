@@ -1,16 +1,16 @@
 import Signup from "./signup/Signup";
 import Login from "./Login";
-import Button from "./Button";
+import displayRoom from "./room/displayRooms";
 
 function Auth(props) {
     return (
         <>
         <div style={{ width: '50%', display: 'inline-block' }}>
         <h2>Login</h2>
-        <Login setToken={props.setToken} />
+        <Login updateToken={props.updateToken} />
         </div>
         <div style={{ width: '50%', display: 'inline-block' }}>
-            <Signup setToken={props.setToken} />
+            <Signup updateToken={props.updateToken} />
         </div>
         </>
     )
