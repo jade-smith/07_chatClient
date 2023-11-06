@@ -36,3 +36,102 @@
     transform: rotate(360deg);
   }
 }
+
+.container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 30px;
+  row-gap: 30px;
+  gap: 30px;
+  background-color: white;
+}
+
+.formContainer {
+  border: solid 3px black;
+  border-radius: 25px;
+  padding: 30px 30px 30px 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #282c34;
+}
+
+#email {
+  margin: 5px 5px 5px 5px;
+  border-radius: 5px;
+}
+
+#username {
+  margin: 5px 5px 5px 5px;
+  border-radius: 5px;
+}
+
+#password {
+  margin: 5px 5px 5px 5px;
+  border-radius: 5px;
+}
+
+#vpassword {
+  margin: 5px 5px 25px 5px;
+  border-radius: 5px;
+}
+
+#button {
+  bottom: 0
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  padding: 10px 10px 0px 10px;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  color: white;
+  background: black;
+}
+
+.grid-sample {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: solid 3px black;
+  padding: 10px 20px 450px 20px;
+  
+}
+
+#available {
+  border: solid 3px black;
+  float: left;
+  padding: 5px 20px 400px 20px;
+}
+
+#title {
+  border: solid 3px black;
+  float: right;
+  padding: 5px 800px 400px 100px;
+}
+
+.add {
+  padding: 10px;
+  float: left;
+  border: solid 3px black;
+}
+
+.delete {
+  padding: 10px;
+  float: left;
+  border: solid 3px black;
+}
+
+.update {
+  padding: 10px;
+  float: left;
+  border: solid 3px black;
+}

@@ -1,33 +1,19 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "../../../App.css";
 
-function Signup(props) {
+function Signup({ updateToken }) {
+  console.log(updateToken);
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [userName, setUser] = useState('');
-  const [password, setPassword] = useState('');
-  const [verifyPassword, setVerifyPassword] = useState('');
-  const signupRoute = 'http://127.0.0.1:4000/user/signup'
-
-  return (
-    <div>
-      <form>
-        <input placeholder="email" onChange={ e => setEmail(e.target.value) } />
-
-        <input placeholder="username" onChange={ e => setUser(e.target.value) } />
-
-        <input placeholder="password" onChange={ e => setPassword(e.target.value) } />
-
-        <input placeholder="verify password" onChange={ e => setVerifyPassword(e.target.value) } />
-
-        <button type="submit" onClick={displayInputFields}>Submit</button>
-      </form>
-    </div>
-  )
+  const [email, setEmail] = useState("");
+  const [userName, setUser] = useState("");
+  const [password, setPassword] = useState("");
+  const [verifyPassword, setVerifyPassword] = useState("");
+  const signupRoute = "http://127.0.0.1:4000/user/signup";
 
   async function displayInputFields(e) {
     e.preventDefault();
-    console.log('Test Function');
+    console.log("Test Function");
     console.log(userName);
     console.log(email);
     console.log(password);
@@ -35,35 +21,59 @@ function Signup(props) {
       try {
         let response = await fetch(signupRoute, {
           headers: new Headers({
-            'content-type': 'application/json'
+            "content-type": "application/json",
           }),
-          method: 'POST',
+          method: "POST",
           body: JSON.stringify({
-            mail: email,
-            user: userName,
-            pass: password,
-          })
-        })
-  
+            email: email,
+            userName: userName,
+            password: password,
+          }),
+        });
+
         let results = await response.json();
         console.log(results);
-        props.setToken(results.token);
-        if(response.status === 200)
-          navigate('/');
-      } catch(error) {
+        updateToken(results.token);
+        if (response.status === 200) navigate("/");
+      } catch (error) {
         console.log(error);
       }
     }
   }
-}
 
-function DisplayUser(props) {
   return (
-    <div>
-      <h2>Username: { props.userName }</h2>
-      <h2>Password: { props.password }</h2>
+    <div className="container">
+      <form className="formContainer">
+        <input
+          placeholder="email"
+          onChange={(e) => setEmail(e.target.value)}
+          id="email"
+        />
+
+        <input
+          placeholder="username"
+          onChange={(e) => setUser(e.target.value)}
+          id="username"
+        />
+
+        <input
+          placeholder="password"
+          onChange={(e) => setPassword(e.target.value)}
+          id="password"
+        />
+
+        <input
+          placeholder="verify password"
+          onChange={(e) => setVerifyPassword(e.target.value)}
+          id="vpassword"
+        />
+
+        <button type="submit" onClick={displayInputFields} id="button">
+          Sign Up
+        </button>
+      </form>
     </div>
-  )
+  );
 }
 
-export default Signup
+export default Signup;
